@@ -320,6 +320,8 @@ create_gadget_parameter_set()
     param_declare_double(ps, "HeliumHeatThresh", OPTIONAL, 10, "Overdensity above which heating is density-independent.");
     param_declare_double(ps, "HeliumHeatAmp", OPTIONAL, 1, "Density-independent heat boost. Changes mean temperature.");
     param_declare_double(ps, "HeliumHeatExp", OPTIONAL, 0, "Density dependent heat boost (exponent). Changes gamma.");
+    param_declare_double(ps, "HydrogenHeatAmp", OPTIONAL, 1, "Density-independent heat boost. Changes pressure smoothing scale hopefully");
+
     /*End of star formation parameters*/
 
     /*Parameters for the massive neutrino model*/

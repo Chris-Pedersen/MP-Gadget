@@ -174,7 +174,7 @@ load_treecool(const char * TreeCoolFile)
                 continue;
             Gamma_log1z[i] = atof(retval);
             /*Get the rest*/
-            Gamma_HI.ydata[i] = log10(atof(strtok(NULL, " \t")));
+            Gamma_HI.ydata[i] = log10(CoolingParams.HydrogenHeatAmp*atof(strtok(NULL, " \t")));
             Gamma_HeI.ydata[i] = log10(atof(strtok(NULL, " \t")));
             Gamma_HeII.ydata[i] = log10(atof(strtok(NULL, " \t")));
             Eps_HI.ydata[i] = log10(atof(strtok(NULL, " \t")));
@@ -939,6 +939,8 @@ set_cooling_params(ParameterSet * ps)
         CoolingParams.HeliumHeatThresh = param_get_double(ps, "HeliumHeatThresh");
         CoolingParams.HeliumHeatAmp = param_get_double(ps, "HeliumHeatAmp");
         CoolingParams.HeliumHeatExp = param_get_double(ps, "HeliumHeatExp");
+        /* Hydrogen heating hack */
+        CoolingParams.HydrogenHeatAmp = param_get_double(ps, "HydrogenHeatAmp");
     }
     MPI_Bcast(&CoolingParams, sizeof(struct cooling_params), MPI_BYTE, 0, MPI_COMM_WORLD);
 }

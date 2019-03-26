@@ -52,6 +52,9 @@ struct cooling_params
     double HeliumHeatAmp;
     double HeliumHeatExp;
     double rho_crit_baryon;
+
+    /* Hydrogen heat amplitude hack, intended to modify pressure smoothing scale */
+    double HydrogenHeatAmp;
 };
 
 /*Set the parameters for the cooling module from the parameter file.*/

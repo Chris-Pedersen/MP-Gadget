@@ -174,10 +174,10 @@ load_treecool(const char * TreeCoolFile)
                 continue;
             Gamma_log1z[i] = atof(retval);
             /*Get the rest*/
-            Gamma_HI.ydata[i] = log10(CoolingParams.HydrogenHeatAmp*atof(strtok(NULL, " \t")));
+            Gamma_HI.ydata[i] = log10(atof(strtok(NULL, " \t")));
             Gamma_HeI.ydata[i] = log10(atof(strtok(NULL, " \t")));
             Gamma_HeII.ydata[i] = log10(atof(strtok(NULL, " \t")));
-            Eps_HI.ydata[i] = log10(atof(strtok(NULL, " \t")));
+            Eps_HI.ydata[i] = log10(CoolingParams.HydrogenHeatAmp*atof(strtok(NULL, " \t")));
             Eps_HeI.ydata[i] = log10(atof(strtok(NULL, " \t")));
             Eps_HeII.ydata[i] = log10(atof(strtok(NULL, " \t")));
         }
